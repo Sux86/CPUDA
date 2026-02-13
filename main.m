@@ -25,7 +25,7 @@ function [acc]=CPUDA(X_s,Y_s,X_t,Y_tt,P_dim,alpha,gamma)
     
     X=[X_s X_t];
 
-    % init C_t;
+    % init c^t;
     C_s = (P' * X_s * Y_s') ./ (sum(Y_s, 2)');  % Target class prototype
     C_t = (gamma * C_s + P' * X_t * Y_t') / (gamma * eye(q) + Y_t * Y_t');
     while iter <= 10
